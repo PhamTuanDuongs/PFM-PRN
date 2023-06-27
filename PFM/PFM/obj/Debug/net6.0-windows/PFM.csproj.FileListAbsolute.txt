@@ -62,3 +62,9 @@ D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PF
 D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PFM.frmLogin.resources
 D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PFM.frmProfile.resources
 D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PFM.frmSignup.resources
+D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PFM.frmDashboard.resources
+D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PFM.frmViewIncome.resources
+D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PFM.frmExpense.resources
+D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PFM.frmViewExpense.resources
+D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PFM.frmCategory.resources
+D:\Materials\Semester5\PRN211\SE1704\PFM-PRN\PFM\PFM\obj\Debug\net6.0-windows\PFM.Properties.Resources.resources

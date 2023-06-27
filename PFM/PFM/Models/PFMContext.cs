@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace PFM.Models
 {
@@ -26,8 +27,10 @@ namespace PFM.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-D8JRM1T\\DUONG;database=PFM;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true");
+                var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+                string ConnectionStr = config.GetConnectionString("DB");
+
+                optionsBuilder.UseSqlServer(ConnectionStr);
             }
         }
 
@@ -66,7 +69,9 @@ namespace PFM.Models
             {
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
-                entity.Property(e => e.Description).HasMaxLength(250);
+                entity.Property(e => e.Description).HasMaxLength(500);
+
+                entity.Property(e => e.Name).HasMaxLength(150);
 
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.Expenses)
@@ -85,7 +90,7 @@ namespace PFM.Models
             {
                 entity.Property(e => e.CreatedAt).HasColumnType("datetime");
 
-                entity.Property(e => e.Description).HasMaxLength(250);
+                entity.Property(e => e.Description).HasMaxLength(500);
 
                 entity.Property(e => e.Name).HasMaxLength(150);
 

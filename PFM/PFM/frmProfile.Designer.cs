@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(849, 506);
+            ClientSize = new Size(848, 519);
             Name = "frmProfile";
             Text = "frmProfile";
             ResumeLayout(false);
