@@ -47,12 +47,13 @@
             btnExpense.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnExpense.Image = (Image)resources.GetObject("btnExpense.Image");
             btnExpense.ImageAlign = ContentAlignment.MiddleLeft;
-            btnExpense.Location = new Point(32, 189);
+            btnExpense.Location = new Point(32, 194);
             btnExpense.Name = "btnExpense";
             btnExpense.Size = new Size(178, 46);
             btnExpense.TabIndex = 3;
             btnExpense.Text = "      Expense";
             btnExpense.UseVisualStyleBackColor = true;
+            btnExpense.Click += btnExpense_Click;
             // 
             // btnCategory
             // 
@@ -65,6 +66,7 @@
             btnCategory.TabIndex = 6;
             btnCategory.Text = "      Category";
             btnCategory.UseVisualStyleBackColor = true;
+            btnCategory.Click += btnCategory_Click;
             // 
             // btnViewIncome
             // 
@@ -77,6 +79,7 @@
             btnViewIncome.TabIndex = 4;
             btnViewIncome.Text = "       View Income";
             btnViewIncome.UseVisualStyleBackColor = true;
+            btnViewIncome.Click += btnViewIncome_Click;
             // 
             // btnDashboard
             // 
@@ -102,6 +105,7 @@
             btnviewExpense.TabIndex = 5;
             btnviewExpense.Text = "      View Expense";
             btnviewExpense.UseVisualStyleBackColor = true;
+            btnviewExpense.Click += btnviewExpense_Click;
             // 
             // btnIncome
             // 
@@ -144,7 +148,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 816);
+            panel1.Size = new Size(250, 967);
             panel1.TabIndex = 12;
             // 
             // btnLogout
@@ -152,29 +156,31 @@
             btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(34, 758);
+            btnLogout.Location = new Point(30, 667);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(176, 46);
             btnLogout.TabIndex = 7;
             btnLogout.Text = "   Logout";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // panelChildForm
             // 
             panelChildForm.Location = new Point(256, 0);
             panelChildForm.Name = "panelChildForm";
-            panelChildForm.Size = new Size(1391, 813);
+            panelChildForm.Size = new Size(1502, 967);
             panelChildForm.TabIndex = 13;
             // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1649, 816);
+            ClientSize = new Size(1759, 967);
             Controls.Add(panel1);
             Controls.Add(panelChildForm);
             Name = "frmMain";
-            Text = "frmMain";
+            Text = "PFM Finance";
+            Load += frmMain_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
