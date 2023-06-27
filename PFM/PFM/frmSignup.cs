@@ -17,7 +17,7 @@ namespace PFM
         PFMContext context;
         public frmSignup()
         {
-            context = new PFMContext();
+            //context = new PFMContext();
             InitializeComponent();
         }
 
@@ -101,18 +101,24 @@ namespace PFM
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            Account account = new Account();
-            account.Username = txtUsername.Text;
-            account.Password = txtPassword.Text;
-            account.Displayname = txtDisplayName.Text;
-            context.Accounts.Add(account);
-            context.SaveChanges();
-            MessageBox.Show("Sign Up successfully");
-            frmLogin login = new frmLogin();
-            login.Show();
-            this.Hide();
+            if (ValidateChildren())
+            {
+                Account account = new Account();
+                account.Username = txtUsername.Text;
+                account.Password = txtPassword.Text;
+                account.Displayname = txtDisplayName.Text;
+                context.Accounts.Add(account);
+                context.SaveChanges();
+                MessageBox.Show("Sign Up successfully");
+                frmLogin login = new frmLogin();
+                login.Show();
+                this.Hide();
+            }
         }
 
+        private void frmSignup_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

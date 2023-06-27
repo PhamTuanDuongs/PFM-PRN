@@ -37,13 +37,16 @@
             label2 = new Label();
             txtUsername = new TextBox();
             errorProvider1 = new ErrorProvider(components);
+            label7 = new Label();
+            label1 = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // btnSignup
             // 
             btnSignup.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSignup.Location = new Point(413, 315);
+            btnSignup.Location = new Point(399, 313);
             btnSignup.Name = "btnSignup";
             btnSignup.Size = new Size(138, 39);
             btnSignup.TabIndex = 14;
@@ -110,11 +113,44 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(272, 105);
+            label7.Name = "label7";
+            label7.Size = new Size(15, 20);
+            label7.TabIndex = 29;
+            label7.Text = "*";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.Red;
+            label1.Location = new Point(272, 178);
+            label1.Name = "label1";
+            label1.Size = new Size(15, 20);
+            label1.TabIndex = 30;
+            label1.Text = "*";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = Color.Red;
+            label5.Location = new Point(313, 251);
+            label5.Name = "label5";
+            label5.Size = new Size(15, 20);
+            label5.TabIndex = 31;
+            label5.Text = "*";
+            // 
             // frmSignup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
+            Controls.Add(label1);
+            Controls.Add(label7);
             Controls.Add(btnSignup);
             Controls.Add(txtDisplayName);
             Controls.Add(label4);
@@ -124,6 +160,7 @@
             Controls.Add(txtUsername);
             Name = "frmSignup";
             Text = "frmSignUp";
+            Load += frmSignup_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -139,5 +176,8 @@
         private Label label2;
         private TextBox txtUsername;
         private ErrorProvider errorProvider1;
+        private Label label5;
+        private Label label1;
+        private Label label7;
     }
 }

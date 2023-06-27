@@ -38,6 +38,8 @@
             txtPassword = new TextBox();
             txtUsername = new TextBox();
             errorProvider1 = new ErrorProvider(components);
+            label7 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -126,11 +128,33 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(127, 112);
+            label7.Name = "label7";
+            label7.Size = new Size(15, 20);
+            label7.TabIndex = 29;
+            label7.Text = "*";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.Red;
+            label3.Location = new Point(127, 170);
+            label3.Name = "label3";
+            label3.Size = new Size(15, 20);
+            label3.TabIndex = 30;
+            label3.Text = "*";
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(602, 464);
+            Controls.Add(label3);
+            Controls.Add(label7);
             Controls.Add(checkBox1);
             Controls.Add(linkLabel1);
             Controls.Add(btnClearFields);
@@ -141,6 +165,7 @@
             Controls.Add(txtUsername);
             Name = "frmLogin";
             Text = "Login";
+            Load += frmLogin_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -157,5 +182,7 @@
         private TextBox txtPassword;
         private TextBox txtUsername;
         private ErrorProvider errorProvider1;
+        private Label label3;
+        private Label label7;
     }
 }

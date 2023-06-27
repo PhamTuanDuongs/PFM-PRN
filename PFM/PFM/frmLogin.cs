@@ -1,15 +1,12 @@
-using PFM.Models;
+﻿using PFM.Models;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace PFM
 {
     public partial class frmLogin : Form
     {
-        PFMContext context;
         public frmLogin()
         {
-            context = new PFMContext();
             InitializeComponent();
         }
 
@@ -28,22 +25,30 @@ namespace PFM
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-            Account account = context.Accounts.FirstOrDefault(x => x.Username == username && x.Password == password);
-            if (account != null)
+            using (PFMContext context = new PFMContext())
             {
-                LoginInfo.Id = account.Id;
-                LoginInfo.Username = txtUsername.Text;
-                MessageBox.Show("Login Successfully");
-                frmMain dashboard = new frmMain();
-                dashboard.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Login Fail");
+                if (ValidateChildren())
+                {
+                    // ValidateChildren là một phương thức có sẵn trong Windows Forms để kích hoạt kiểm tra
+                    // validating trên tất cả các control con trong form. 
+                    string username = txtUsername.Text;
+                    string password = txtPassword.Text;
+                    Account account = context.Accounts.FirstOrDefault(x => x.Username == username && x.Password == password);
+                    if (account != null)
+                    {
+                        LoginInfo.Id = account.Id;
+                        LoginInfo.Username = txtUsername.Text;
+                        MessageBox.Show("Login Successfully");
+                        frmMain dashboard = new frmMain();
+                        dashboard.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login Fail");
 
+                    }
+                }
             }
         }
 
@@ -101,6 +106,11 @@ namespace PFM
                 errorProvider1.SetError(txtPassword, "");
 
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
