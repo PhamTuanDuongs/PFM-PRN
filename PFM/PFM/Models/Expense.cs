@@ -11,6 +11,7 @@ namespace PFM.Models
         public string? Description { get; set; }
         public DateTime CreatedAt { get; set; }
         public int AccountId { get; set; }
+        public string Name { get; set; } = null!;
 
         public virtual Account Account { get; set; } = null!;
         public virtual Category Category { get; set; } = null!;
